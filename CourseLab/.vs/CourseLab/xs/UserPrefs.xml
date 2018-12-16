@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{AA1E77B0-C58C-438D-8A58-EA6772F03973}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CourseLab.ConsoleTest/Program.cs">
+    <Files>
+      <File FileName="CourseLab.Services/Services/User/Dto/UserDto.cs" Line="15" Column="1" />
+      <File FileName="CourseLab.Services/Services/User/IUserService.cs" Line="9" Column="17" />
+      <File FileName="CourseLab.Web/Startup.cs" Line="19" Column="10" />
+      <File FileName="CourseLab.Data/UserManagement/Infrastructure/UnitOfWork.cs" Line="8" Column="6" />
+      <File FileName="CourseLab.Data/UserManagement/Infrastructure/IUnitOfWork.cs" Line="8" Column="1" />
+      <File FileName="CourseLab.Services/Services/User/UserService.cs" Line="35" Column="32" />
+      <File FileName="CourseLab.Web/Controllers/HomeController.cs" Line="53" Column="10" />
+      <File FileName="CourseLab.Web/Views/Home/Index.cshtml" Line="15" Column="17" />
+      <File FileName="CourseLab.Web/Models/ErrorViewModel.cs" Line="1" Column="1" />
+      <File FileName="CourseLab.Web/Models/UserModel.cs" Line="10" Column="31" />
+      <File FileName="CourseLab.Data/UserManagement/Entities/User.cs" Line="11" Column="6" />
+      <File FileName="CourseLab.Web/Views/Home/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="CourseLab.Services/Infrastructure/DependencyMapperService.cs" Line="16" Column="10" />
+      <File FileName="CourseLab.ConsoleTest/Program.cs" Line="9" Column="18" />
+      <File FileName="CourseLab.Data/UserManagement/Infrastructure/Repository.cs" Line="64" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.CourseLab.Web PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.CourseLab.ConsoleTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

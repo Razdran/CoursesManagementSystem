@@ -1,0 +1,27 @@
+﻿@model IEnumerable<CourseLab.Web.Models.UserModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table">
+
+    <tbody>
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(modelItem => modelItem.FirstOrDefault().Username)</th>
+                <th>@Html.DisplayNameFor(modelItem => modelItem.FirstOrDefault().Password)</th>
+                <th>@Html.DisplayNameFor(modelItem => modelItem.First().UserRole)</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Username)</td>
+                <td> @Html.DisplayFor(modelItem => item.Password)</td>
+                <td> @Html.DisplayFor(modelItem => item.UserRole)</td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
