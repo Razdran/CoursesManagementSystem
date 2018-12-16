@@ -1,13 +1,16 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseLab.Data", "CourseLab.Data\CourseLab.Data.csproj", "{2FDCA50B-A503-4EBC-9889-ADD84729E3A6}"
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseLab.Data", "CourseLab.Data\CourseLab.Data.csproj", "{2FDCA50B-A503-4EBC-9889-ADD84729E3A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseLab.Services", "CourseLab.Services\CourseLab.Services.csproj", "{847C8DAB-480C-467A-8BAA-5CC3EB1F3A77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseLab.Services", "CourseLab.Services\CourseLab.Services.csproj", "{847C8DAB-480C-467A-8BAA-5CC3EB1F3A77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseLab.Web", "CourseLab.Web\CourseLab.Web.csproj", "{AA1E77B0-C58C-438D-8A58-EA6772F03973}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseLab.Web", "CourseLab.Web\CourseLab.Web.csproj", "{AA1E77B0-C58C-438D-8A58-EA6772F03973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseLab.ConsoleTest", "CourseLab.ConsoleTest\CourseLab.ConsoleTest.csproj", "{9C08495D-3C08-4797-88C7-A430060E745B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseLab.ConsoleTest", "CourseLab.ConsoleTest\CourseLab.ConsoleTest.csproj", "{9C08495D-3C08-4797-88C7-A430060E745B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseLab.Services.Tests", "CourseLab.Services.Tests\CourseLab.Services.Tests.csproj", "{D91096C7-1CFF-4B31-ABE9-DEE9A1350643}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,5 +34,15 @@ Global
 		{9C08495D-3C08-4797-88C7-A430060E745B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C08495D-3C08-4797-88C7-A430060E745B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C08495D-3C08-4797-88C7-A430060E745B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D91096C7-1CFF-4B31-ABE9-DEE9A1350643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D91096C7-1CFF-4B31-ABE9-DEE9A1350643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D91096C7-1CFF-4B31-ABE9-DEE9A1350643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D91096C7-1CFF-4B31-ABE9-DEE9A1350643}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A527A3FA-B170-4A5C-91E1-F24D001DBC48}
 	EndGlobalSection
 EndGlobal

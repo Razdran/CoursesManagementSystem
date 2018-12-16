@@ -7,5 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CourseLab.Data\CourseLab.Data.csproj" />
+    <ProjectReference Include="..\CourseLab.Services\CourseLab.Services.csproj" />
   </ItemGroup>
 </Project>
