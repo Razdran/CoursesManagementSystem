@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using CourseLab.Web.Models;
 using CourseLab.Services.Services.User;
 using Omu.ValueInjecter;
+using CourseLab.Services.Services.User.Dto;
 
 namespace CourseLab.Web.Controllers
 {
@@ -28,7 +29,20 @@ namespace CourseLab.Web.Controllers
             }
             return View(usermodellist);
         }
-
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(UserModel model)
+        {
+            var user = new UserDto();
+            user.InjectFrom(model);
+            user.Id = Guid.NewGuid();
+            userService.CreateUser(user);
+            return RedirectToAction("Index");
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

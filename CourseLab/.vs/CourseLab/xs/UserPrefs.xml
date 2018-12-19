@@ -1,21 +1,27 @@
 ﻿<Properties StartupConfiguration="{AA1E77B0-C58C-438D-8A58-EA6772F03973}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CourseLab.ConsoleTest/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CourseLab.Web/Program.cs">
     <Files>
       <File FileName="CourseLab.Services/Services/User/Dto/UserDto.cs" Line="15" Column="1" />
-      <File FileName="CourseLab.Services/Services/User/IUserService.cs" Line="9" Column="17" />
+      <File FileName="CourseLab.Services/Services/User/IUserService.cs" Line="13" Column="73" />
       <File FileName="CourseLab.Web/Startup.cs" Line="19" Column="10" />
       <File FileName="CourseLab.Data/UserManagement/Infrastructure/UnitOfWork.cs" Line="8" Column="6" />
       <File FileName="CourseLab.Data/UserManagement/Infrastructure/IUnitOfWork.cs" Line="8" Column="1" />
-      <File FileName="CourseLab.Services/Services/User/UserService.cs" Line="35" Column="32" />
-      <File FileName="CourseLab.Web/Controllers/HomeController.cs" Line="53" Column="10" />
-      <File FileName="CourseLab.Web/Views/Home/Index.cshtml" Line="15" Column="17" />
+      <File FileName="CourseLab.Services/Services/User/UserService.cs" Line="68" Column="13" />
+      <File FileName="CourseLab.Web/Controllers/HomeController.cs" Line="72" Column="1" />
+      <File FileName="CourseLab.Web/Views/Home/Index.cshtml" Line="29" Column="26" />
       <File FileName="CourseLab.Web/Models/ErrorViewModel.cs" Line="1" Column="1" />
-      <File FileName="CourseLab.Web/Models/UserModel.cs" Line="10" Column="31" />
+      <File FileName="CourseLab.Web/Models/UserModel.cs" Line="1" Column="1" />
       <File FileName="CourseLab.Data/UserManagement/Entities/User.cs" Line="11" Column="6" />
       <File FileName="CourseLab.Web/Views/Home/Privacy.cshtml" Line="1" Column="1" />
       <File FileName="CourseLab.Services/Infrastructure/DependencyMapperService.cs" Line="16" Column="10" />
-      <File FileName="CourseLab.ConsoleTest/Program.cs" Line="9" Column="18" />
+      <File FileName="CourseLab.ConsoleTest/Program.cs" Line="20" Column="13" />
       <File FileName="CourseLab.Data/UserManagement/Infrastructure/Repository.cs" Line="64" Column="1" />
+      <File FileName="CourseLab.Data/UserManagement/UserManagementContext.cs" Line="13" Column="135" />
+      <File FileName="CourseLab.Web/Views/Home/Create.cshtml" Line="41" Column="1" />
+      <File FileName="CourseLab.Web/Controllers/LoginController.cs" Line="28" Column="3" />
+      <File FileName="CourseLab.Web/Views/Login/Index.cshtml" Line="31" Column="49" />
+      <File FileName="CourseLab.Web/Models/LoginModel.cs" Line="11" Column="19" />
+      <File FileName="CourseLab.Web/Program.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
@@ -23,7 +29,9 @@
   <MonoDevelop.Ide.ItemProperties.CourseLab.Web PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.CourseLab.ConsoleTest PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/macbook1/Documents/GitHub/CoursesManagementSystem/CourseLab/CourseLab.Web/Controllers/LoginController.cs" relfile="CourseLab.Web/Controllers/LoginController.cs" line="28" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

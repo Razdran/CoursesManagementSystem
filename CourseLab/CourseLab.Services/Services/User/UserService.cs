@@ -4,6 +4,9 @@ using Entities = CourseLab.Data.UserManagement.Entities;
 using CourseLab.Data.UserManagement.Infrastructure;
 using CourseLab.Services.Services.User.Dto;
 using Omu.ValueInjecter;
+using System.Security.Cryptography;
+using System.Text;
+using System.Linq;
 
 namespace CourseLab.Services.Services.User
 {
@@ -20,8 +23,20 @@ namespace CourseLab.Services.Services.User
 
         public void CreateUser(UserDto userDto)
         {
+            userDto.Password = Encrypt(userDto.Password);
+            userDto.IsDeleted = false;
             userRepository.Add((Entities.User)new Entities.User().InjectFrom(userDto));
             unitOfWork.Commit();
+        }
+
+        static string Encrypt(string value)
+        {
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding utf8 = new UTF8Encoding();
+                byte[] data = md5.ComputeHash(utf8.GetBytes(value));
+                return Convert.ToBase64String(data);
+            }
         }
 
         public List<UserDto> GetAll()
@@ -42,6 +57,15 @@ namespace CourseLab.Services.Services.User
             var userDto = (UserDto)new UserDto().InjectFrom(user);
 
             return userDto;
+        }
+
+        public UserDto GetByUsernamePassword(string username,string password)
+        {
+            var user = userRepository.Query(x => x.Username == username && Encrypt(x.Password) == password).SingleOrDefault();
+            var userdto = (UserDto)new UserDto().InjectFrom(user);
+            if (user == null)
+                return null;
+            return userdto; 
         }
 
         public void UpdateUser(UserDto userDto)

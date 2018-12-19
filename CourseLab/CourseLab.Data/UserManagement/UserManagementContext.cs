@@ -10,7 +10,7 @@ namespace CourseLab.Data.UserManagement
         public DbSet<User> Users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=UserManagementDb;User Id=sa;Password=Cosminbbx1;");
+            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=UserManagementDb;User Id=sa;Password=reallyStrongPwd123;");
         }
     }
 }

@@ -14,4 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CourseLab.Services\CourseLab.Services.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Login\" />
+  </ItemGroup>
 </Project>

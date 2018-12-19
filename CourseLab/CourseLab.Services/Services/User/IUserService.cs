@@ -10,5 +10,6 @@ namespace CourseLab.Services.Services.User
         UserDto GetById(Guid id);
         void CreateUser(UserDto userDto);
         void UpdateUser(UserDto userDto);
+        UserDto GetByUsernamePassword(string username, string password);
     }
 }
