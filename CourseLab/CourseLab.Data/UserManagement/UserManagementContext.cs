@@ -8,9 +8,11 @@ namespace CourseLab.Data.UserManagement
     public class UserManagementContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Student> Students { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=UserManagementDb;User Id=sa;Password=reallyStrongPwd123;");
+            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=UserManagementDb;Trusted_Connection=True;");
         }
     }
 }

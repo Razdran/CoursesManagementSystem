@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using CourseLab.Web.Models;
 using CourseLab.Services.Services.User;
-using Omu.ValueInjecter;
-using CourseLab.Services.Services.User.Dto;
 
 namespace CourseLab.Web.Controllers
 {
@@ -23,16 +17,15 @@ namespace CourseLab.Web.Controllers
         {
             return View();
         }
-        [HttpPut]
+        [HttpPost]
         public IActionResult Index(LoginModel model)
         {
             var x = userService.GetByUsernamePassword(model.Username, model.Password);
             if (x == null)
-                return NotFound();
-            return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index","Login");
+            
+            return RedirectToAction(nameof(ProfileController.Index), "Profile");
         }
-        
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

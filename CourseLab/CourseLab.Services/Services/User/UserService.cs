@@ -59,15 +59,6 @@ namespace CourseLab.Services.Services.User
             return userDto;
         }
 
-        public UserDto GetByUsernamePassword(string username,string password)
-        {
-            var user = userRepository.Query(x => x.Username == username && Encrypt(x.Password) == password).SingleOrDefault();
-            var userdto = (UserDto)new UserDto().InjectFrom(user);
-            if (user == null)
-                return null;
-            return userdto; 
-        }
-
         public void UpdateUser(UserDto userDto)
         {
             var user = userRepository.GetById(userDto.Id);
@@ -78,8 +69,20 @@ namespace CourseLab.Services.Services.User
             userDtoUpdate.UserRole = userDto.UserRole;
             userDtoUpdate.IsDeleted = userDto.IsDeleted;
 
-            userRepository.Update((Entities.User) user.InjectFrom(userDtoUpdate));
+            userRepository.Update((Entities.User)user.InjectFrom(userDtoUpdate));
             unitOfWork.Commit();
         }
+
+        public UserDto GetByUsernamePassword(string username,string password)
+        {
+            
+            var user = userRepository.Query(x => x.Username == username && x.Password == Encrypt(password)).SingleOrDefault();
+            if (user == null)
+                return null;
+            var userdto = (UserDto)new UserDto().InjectFrom(user);
+            return userdto; 
+        }
+
+        
     }
 }

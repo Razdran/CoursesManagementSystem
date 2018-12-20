@@ -5,8 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UserManagement\" />
-    <Folder Include="UserManagement\Entities\" />
     <Folder Include="UserManagement\Infrastructure\" />
   </ItemGroup>
   <ItemGroup>

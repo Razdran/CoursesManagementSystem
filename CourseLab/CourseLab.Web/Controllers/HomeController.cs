@@ -20,14 +20,15 @@ namespace CourseLab.Web.Controllers
         }
         public IActionResult Index()
         {
-            var userlist = userService.GetAll();
-            var usermodellist = new List<UserModel>();
-            foreach(var user in userlist)
-            {
-                var usermodel = (UserModel)new UserModel().InjectFrom(user);
-                usermodellist.Add(usermodel);
-            }
-            return View(usermodellist);
+            //var userlist = userService.GetAll();
+            //var usermodellist = new List<UserModel>();
+            //foreach(var user in userlist)
+            //{
+            //    var usermodel = (UserModel)new UserModel().InjectFrom(user);
+            //    usermodellist.Add(usermodel);
+            //}
+            //return View(usermodellist);
+            return View();
         }
         [HttpGet]
         public IActionResult Create()
@@ -41,25 +42,7 @@ namespace CourseLab.Web.Controllers
             user.InjectFrom(model);
             user.Id = Guid.NewGuid();
             userService.CreateUser(user);
-            return RedirectToAction("Index");
-        }
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            return RedirectToAction("Index","Login");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
