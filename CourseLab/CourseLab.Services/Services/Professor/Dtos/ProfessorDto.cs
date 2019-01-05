@@ -1,19 +1,16 @@
-﻿using CourseLab.Data;
-using CourseLab.Data.UserManagement;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CourseLab.Services.Services.Student.Dto
+namespace CourseLab.Services.Services.Professor.Dtos
 {
-    public class StudentDto
+    public class ProfessorDto
     {
         public Guid Id { get; set; }
-        public Guid UserId { set; get; }
+        public Guid UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Guid Group { get; set; }
-        public YearEnum Year { get; set; }
+        public Guid Object { get; set; }
         public string Email { get; set; }
         public bool IsDeleted { get; set; }
     }

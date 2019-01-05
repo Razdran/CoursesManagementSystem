@@ -10,7 +10,7 @@ namespace CourseLab.Data.UserManagement.Entities
         public Guid UserId { set; get; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public GroupEnum Group { get; set; }
+        public Guid Group { get; set; }
         public YearEnum Year { get; set; }
         public string Email { get; set; }
         public bool IsDeleted { get; set; }
