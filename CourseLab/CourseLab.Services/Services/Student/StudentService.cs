@@ -3,6 +3,7 @@ using CourseLab.Services.Services.Student.Dto;
 using Omu.ValueInjecter;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Entities = CourseLab.Data.UserManagement.Entities;
 
@@ -42,6 +43,14 @@ namespace CourseLab.Services.Services.Student
         public StudentDto GetById(Guid id)
         {
             var user = studentRepository.GetById(id);
+            var userDto = (StudentDto)new StudentDto().InjectFrom(user);
+
+            return userDto;
+        }
+
+        public StudentDto GetByUserId(Guid id)
+        {
+            var user = studentRepository.Query(x => x.UserId == id).SingleOrDefault();
             var userDto = (StudentDto)new StudentDto().InjectFrom(user);
 
             return userDto;

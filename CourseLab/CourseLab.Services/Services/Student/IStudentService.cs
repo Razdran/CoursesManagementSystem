@@ -9,6 +9,7 @@ namespace CourseLab.Services.Services.Student
     {
         List<StudentDto> GetAll();
         StudentDto GetById(Guid id);
+        StudentDto GetByUserId(Guid id);
         void CreateStudent(StudentDto studentDto);
         void UpdateStudent(StudentDto StudentDto);
     }

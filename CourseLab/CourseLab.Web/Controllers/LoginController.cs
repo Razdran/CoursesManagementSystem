@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using CourseLab.Web.Models;
 using CourseLab.Services.Services.User;
+using Microsoft.AspNetCore.Http;
+using System;
 
 namespace CourseLab.Web.Controllers
 {
@@ -15,18 +17,53 @@ namespace CourseLab.Web.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var x = HttpContext.Session.GetString("Id");
+            if (HttpContext.Session.GetString("Id") != null)
+            {
+                var useridstring = HttpContext.Session.GetString("Id");
+                var userid = Guid.Parse(useridstring);
+                var user = userService.GetById(userid);
+                HttpContext.Session.SetString("Id", user.Id.ToString());
+                if (user.UserRole == 0)
+                {
+                    return RedirectToAction(nameof(ProfileController.StudentProfile), "Profile");
+                }
+                else
+                {
+                    return RedirectToAction(nameof(ProfileController.ProfessorProfile), "Profile");
+                }
+            }
+            else
+            {
+                return View();
+            }
         }
         [HttpPost]
         public IActionResult Index(LoginModel model)
         {
-            var x = userService.GetByUsernamePassword(model.Username, model.Password);
-            if (x == null)
-                return RedirectToAction("Index","Login");
-            
-            return RedirectToAction(nameof(ProfileController.Index), "Profile");
+
+            var user = userService.GetByUsernamePassword(model.Username, model.Password);
+            if (user == null)
+                return RedirectToAction("Index", "Login");
+            else
+            {
+                HttpContext.Session.SetString("Id", user.Id.ToString());
+            }
+            if (user.UserRole == 0)
+            {
+                return RedirectToAction(nameof(ProfileController.StudentProfile), "Profile");
+            }
+            else
+            {
+                return RedirectToAction(nameof(ProfileController.ProfessorProfile), "Profile");
+            }
         }
 
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction(nameof(LoginController.Index), "Login");
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

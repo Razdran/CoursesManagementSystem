@@ -54,6 +54,8 @@ namespace CourseLab.Services.Services.User
         public UserDto GetById(Guid id)
         {
             var user = userRepository.GetById(id);
+            if (user == null)
+                return null;
             var userDto = (UserDto)new UserDto().InjectFrom(user);
 
             return userDto;
@@ -83,6 +85,14 @@ namespace CourseLab.Services.Services.User
             return userdto; 
         }
 
-        
+        public UserDto GetByUsername(string username)
+        {
+            var user = userRepository.Query(x => x.Username == username).SingleOrDefault();
+            if (user == null)
+                return null;
+            var userDto = (UserDto)new UserDto().InjectFrom(user);
+
+            return userDto;
+        }
     }
 }

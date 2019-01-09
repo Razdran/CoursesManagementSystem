@@ -9,6 +9,7 @@ namespace CourseLab.Services.Services.Professor
     {
         List<ProfessorDto> GetAll();
         ProfessorDto GetById(Guid id);
+        ProfessorDto GetByUserId(Guid id);
         void CreateProfessor(ProfessorDto professorDto);
         void UpdateProfessor(ProfessorDto professorDto);
     }

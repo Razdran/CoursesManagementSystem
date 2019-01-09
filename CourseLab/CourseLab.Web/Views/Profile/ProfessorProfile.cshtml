@@ -1,0 +1,42 @@
+﻿@model CourseLab.Web.Models.ProfessorRegisterModel
+
+@{
+    ViewData["Title"] = "ProfessorProfile";
+}
+
+<h2>ProfessorProfile</h2>
+
+<div>
+    <h4>ProfessorRegisterModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Object)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Object)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    
+    <a asp-controller="Login" asp-action="Index">Logout</a>
+</div>

@@ -20,7 +20,7 @@ namespace CourseLab.Web.Controllers
         private readonly IProfessorService professorService;
         private readonly IGroupService groupService;
         private readonly IObjectService objectService;
-        public RegisterController(IUserService userservice,IStudentService studentService,IProfessorService professorService,IGroupService groupService,IObjectService objectService)
+        public RegisterController(IUserService userservice, IStudentService studentService, IProfessorService professorService, IGroupService groupService, IObjectService objectService)
         {
             this.userService = userservice;
             this.studentService = studentService;
@@ -65,7 +65,7 @@ namespace CourseLab.Web.Controllers
         {
             var user = (UserDto)new UserDto().InjectFrom(model);
             user.Id = Guid.NewGuid();
-            user.UserRole = Data.UserManagement.RoleEnum.Student;
+            user.UserRole = Data.UserManagement.RoleEnum.Professor;
             user.IsDeleted = false;
             var professor = (ProfessorDto)new ProfessorDto().InjectFrom(model);
             professor.Id = Guid.NewGuid();
@@ -75,6 +75,22 @@ namespace CourseLab.Web.Controllers
             userService.CreateUser(user);
             professorService.CreateProfessor(professor);
             return RedirectToAction("Index", "Login");
+        }
+
+        public JsonResult CheckUsernameAvailability(string userdata)
+        {
+            System.Threading.Thread.Sleep(200);
+            var SeachData = userService.GetByUsername(userdata);
+            if (SeachData != null)
+            {
+                return Json(1);
+            }
+            else
+            {
+                return Json(0);
+            }
+
+
         }
     }
 }
