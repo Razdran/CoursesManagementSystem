@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using CourseLab.Services.Services.Group;
 using CourseLab.Services.Services.Objects;
 using CourseLab.Services.Services.Professor;
@@ -31,7 +32,7 @@ namespace CourseLab.Web.Controllers
         [HttpGet]
         public IActionResult StudentRegister()
         {
-            var groups = groupService.GetAll();
+            var groups = groupService.GetAll().OrderBy(x => x.Name).ToList();
             var model = new StudentRegisterModel();
             model.Groups = groups;
             return View(model);
@@ -55,7 +56,7 @@ namespace CourseLab.Web.Controllers
         [HttpGet]
         public IActionResult ProfessorRegister()
         {
-            var objects = objectService.GetAll();
+            var objects = objectService.GetAll().OrderBy(x => x.Name).ToList();
             var model = new ProfessorRegisterModel();
             model.Objects = objects;
             return View(model);
