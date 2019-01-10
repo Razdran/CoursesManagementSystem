@@ -9,6 +9,7 @@ namespace CourseLab.Web.Models
         [Required]
         public string Username { get; set; }
         [Required]
+        [MaxLength(50), MinLength(8)]
         public string Password { get; set; }
 
     }
