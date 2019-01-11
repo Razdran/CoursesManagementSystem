@@ -4,7 +4,6 @@ using Omu.ValueInjecter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Entities = CourseLab.Data.UserManagement.Entities;
 
 namespace CourseLab.Services.Services.Student
