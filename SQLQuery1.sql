@@ -61,12 +61,42 @@ Select * from Groups;
 create table [Objects](
 	Id uniqueidentifier PRIMARY KEY,
 	[Name] nvarchar(100),
+	[Year] int,
 	IsDeleted bit
 );
-insert into [Objects](Id,[Name],IsDeleted) values ('e4b56040-d812-4d8d-a683-da011e4077c2','Computer Networks',0);
-insert into [Objects](Id,[Name],IsDeleted) values ('5edbac92-7ba3-41db-83b8-6f9629de96b8','Algebraic Foundations of Computer Science',0);
-insert into [Objects](Id,[Name],IsDeleted) values ('e19d64b2-5016-4e62-8cbf-cd96ea90e637','Databases',0);
-insert into [Objects](Id,[Name],IsDeleted) values ('640dafe0-7363-432a-a338-15dbcb9a9e06','Data Structures',0);
-insert into [Objects](Id,[Name],IsDeleted) values ('aa92f091-a1f7-4867-ac71-233c7d28144b','Logics for Computer Science',0);
-insert into [Objects](Id,[Name],IsDeleted) values ('3f2d9995-a636-43e6-a6fb-249597f40a7b','Information Security',0);
 
+drop table [Objects];
+insert into [Objects](Id,[Name],[Year],IsDeleted) values ('e4b56040-d812-4d8d-a683-da011e4077c2','Computer Networks',1,0);
+insert into [Objects](Id,[Name],[Year],IsDeleted) values ('5edbac92-7ba3-41db-83b8-6f9629de96b8','Algebraic Foundations of Computer Science',0,0);
+insert into [Objects](Id,[Name],[Year],IsDeleted) values ('e19d64b2-5016-4e62-8cbf-cd96ea90e637','Databases',1,0);
+insert into [Objects](Id,[Name],[Year],IsDeleted) values ('640dafe0-7363-432a-a338-15dbcb9a9e06','Data Structures',0,0);
+insert into [Objects](Id,[Name],[Year],IsDeleted) values ('aa92f091-a1f7-4867-ac71-233c7d28144b','Logics for Computer Science',0,0);
+insert into [Objects](Id,[Name],[Year],IsDeleted) values ('3f2d9995-a636-43e6-a6fb-249597f40a7b','Information Security',2,0);
+
+
+create table Schedules(
+	Id uniqueidentifier PRIMARY KEY,
+	[Group] nvarchar(100),
+	[Object] nvarchar(100),
+	[Professor] nvarchar(100),
+	[Day] int,
+	[StartTime] int,
+	[EndTime] int,
+	IsDeleted bit
+);
+
+drop table Schedules;
+create table Subscriptions(
+	Id uniqueidentifier PRIMARY KEY,
+	[User] uniqueidentifier,
+	[Professor] uniqueidentifier,
+	IsDeleted bit
+);
+
+create table Anouncements(
+	Id uniqueidentifier PRIMARY KEY,
+	[Professor] nvarchar(100),
+	[Anouncement] nvarchar(400),
+	[CreationDate] datetime, 
+	IsDeleted bit
+);

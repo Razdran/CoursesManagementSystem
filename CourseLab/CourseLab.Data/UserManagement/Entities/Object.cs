@@ -8,6 +8,7 @@ namespace CourseLab.Data.UserManagement.Entities
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+        public YearEnum Year { get; set; }
         public bool IsDeleted { get; set; }
     }
 }
