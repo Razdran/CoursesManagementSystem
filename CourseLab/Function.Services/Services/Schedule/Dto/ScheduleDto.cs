@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Function.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Function.Data.Entities
+namespace Function.Services.Services.Schedule.Dto
 {
-    public class Schedule
+    public class ScheduleDto
     {
         public Guid Id { get; set; }
         public string Group { get; set; }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CourseLab.Services.Infrastructure;
+using Function.Services.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,8 +32,9 @@ namespace CourseLab.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            
             DependencyMapperService.AddToContainer(services);
+            FunctionDependencyMapperServices.AddToContainer(services);
             services.AddMvc();
             services.AddSession(options =>
             {
