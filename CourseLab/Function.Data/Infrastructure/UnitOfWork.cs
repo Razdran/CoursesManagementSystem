@@ -1,11 +1,10 @@
-﻿namespace CourseLab.Data.UserManagement.Infrastructure
+﻿namespace Function.Data.Infrastructure
 {
-
     public class UnitOfWork : IUnitOfWork
     {
-        private UserManagementContext dbContext;
+        private FunctionContext dbContext;
 
-        public UnitOfWork(UserManagementContext dbContext)
+        public UnitOfWork(FunctionContext dbContext)
         {
             this.dbContext = dbContext;
         }
@@ -15,5 +14,4 @@
             dbContext.SaveChanges();
         }
     }
-
 }

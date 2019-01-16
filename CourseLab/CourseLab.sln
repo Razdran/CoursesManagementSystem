@@ -12,9 +12,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseLab.ConsoleTest", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseLab.Services.Tests", "CourseLab.Services.Tests\CourseLab.Services.Tests.csproj", "{D91096C7-1CFF-4B31-ABE9-DEE9A1350643}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseLab.Data.Tests", "CourseLab.Data.Tests\CourseLab.Data.Tests.csproj", "{0C45E8B4-9472-4C0E-AB86-A7B4AD6A0346}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseLab.Data.Tests", "CourseLab.Data.Tests\CourseLab.Data.Tests.csproj", "{0C45E8B4-9472-4C0E-AB86-A7B4AD6A0346}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseLab.Web.Tests", "CourseLab.Web.Tests\CourseLab.Web.Tests.csproj", "{07774BF1-632A-4EAE-931F-104C0928A6CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseLab.Web.Tests", "CourseLab.Web.Tests\CourseLab.Web.Tests.csproj", "{07774BF1-632A-4EAE-931F-104C0928A6CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Function.Data", "Function.Data\Function.Data.csproj", "{7471B8CE-1F73-4273-9C36-A90394F6CAC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{07774BF1-632A-4EAE-931F-104C0928A6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07774BF1-632A-4EAE-931F-104C0928A6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07774BF1-632A-4EAE-931F-104C0928A6CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7471B8CE-1F73-4273-9C36-A90394F6CAC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7471B8CE-1F73-4273-9C36-A90394F6CAC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7471B8CE-1F73-4273-9C36-A90394F6CAC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7471B8CE-1F73-4273-9C36-A90394F6CAC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
