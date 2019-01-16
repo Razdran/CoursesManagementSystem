@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Function.Services.Services.Schedule
 {
-    public interface ISheduleService
+    public interface IScheduleService
     {
         ScheduleDto GetById(Guid id);
         List<ScheduleDto> GetByGroupAndYear(string group, int year);

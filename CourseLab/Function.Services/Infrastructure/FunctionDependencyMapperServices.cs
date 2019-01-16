@@ -1,4 +1,7 @@
 ﻿using Function.Data.Infrastructure;
+using Function.Services.Services.Anouncement;
+using Function.Services.Services.Schedule;
+using Function.Services.Services.Subscription;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Function.Services.Infrastructure
@@ -9,7 +12,9 @@ namespace Function.Services.Infrastructure
         {
             FunctionDependencyMapperData.AddToContainer(services);
 
-            
+            services.AddTransient(typeof(IScheduleService), typeof(ScheduleService));
+            services.AddTransient(typeof(ISubscriptionService), typeof(SubscriptionService));
+            services.AddTransient(typeof(IAnouncementService), typeof(AnouncementsService));
             return services;
         }
     }
