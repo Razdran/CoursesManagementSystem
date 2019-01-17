@@ -1,0 +1,64 @@
+﻿@model List<CourseLab.Web.Models.ScheduleModel>
+
+@{
+    ViewData["Title"] = "StudentSchedule";
+    Layout = "~/Views/Shared/_LayoutStuds.cshtml";
+}
+
+<h2>StudentSchedule</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                
+                <th>
+                    @Html.DisplayNameFor(model => Model[0].Object)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model[0].Professor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model[0].Day)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model[0].StartTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model[0].EndTime)
+                </th>
+                
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Object)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Professor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

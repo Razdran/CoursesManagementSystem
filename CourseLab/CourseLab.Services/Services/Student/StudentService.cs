@@ -50,6 +50,8 @@ namespace CourseLab.Services.Services.Student
         public StudentDto GetByUserId(Guid id)
         {
             var user = studentRepository.Query(x => x.UserId == id).SingleOrDefault();
+            if (user == null)
+                return null;
             var userDto = (StudentDto)new StudentDto().InjectFrom(user);
 
             return userDto;

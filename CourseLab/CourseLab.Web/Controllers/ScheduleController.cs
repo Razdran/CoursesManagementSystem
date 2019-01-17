@@ -54,7 +54,18 @@ namespace CourseLab.Web.Controllers
         }
         public IActionResult StudentSchedule()
         {
-            return View();
+            var user = HttpContext.Session.GetString("Id");
+            var id = Guid.Parse(user);
+            var student = studentService.GetByUserId(id);
+            var group = groupService.GetbyId(student.Group);
+            var schedule = scheduleService.GetByGroupAndYear(group.Name,student.Year);
+            var modelSchedule = new List<ScheduleModel>();
+            foreach (var item in schedule)
+            {
+                var sch = (ScheduleModel)new ScheduleModel().InjectFrom(item);
+                modelSchedule.Add(sch);
+            }
+            return View(modelSchedule);
         }
     }
 }
