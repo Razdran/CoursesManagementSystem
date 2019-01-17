@@ -56,6 +56,14 @@ namespace CourseLab.Services.Services.Professor
             return userDto;
         }
 
+        public string GetFullName(Guid id)
+        {
+            var prof= professorRepository.GetById(id);
+            if (prof == null)
+                return null;
+            return prof.FirstName + " " + prof.LastName;
+        }
+
         public void UpdateProfessor(ProfessorDto professorDto)
         {
             var professor = professorRepository.GetById(professorDto.Id);

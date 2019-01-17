@@ -8,7 +8,7 @@ using Omu.ValueInjecter;
 
 namespace Function.Services.Services.Schedule
 {
-    public class ScheduleService : ISheduleService
+    public class ScheduleService : IScheduleService
     {
         private readonly IRepository<Data.Entities.Schedule> scheduleRepository;
         private readonly IUnitOfWork unitOfWork;
@@ -38,6 +38,18 @@ namespace Function.Services.Services.Schedule
                 return null;
             var entitydto = (ScheduleDto)new ScheduleDto().InjectFrom(entity);
             return entitydto;
+        }
+
+        public List<ScheduleDto> GetByProfessor(string professor)
+        {
+            var list = scheduleRepository.Query(x => x.Professor == professor).ToList();
+            var dtolist = new List<ScheduleDto>();
+            foreach(var item in list)
+            {
+                var sch = (ScheduleDto)new ScheduleDto().InjectFrom(item);
+                dtolist.Add(sch);
+            }
+            return dtolist.OrderBy(x => x.Year).ThenBy(x => x.StartTime).ToList();
         }
     }
 }

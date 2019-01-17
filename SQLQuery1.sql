@@ -7,7 +7,7 @@ create table Users(
     );
 
 drop table Users;
-
+select * from Users;
 create table Students(
 	Id  uniqueidentifier PRIMARY KEY,
 	UserId uniqueidentifier,
@@ -30,6 +30,9 @@ create table Professors(
 	[Email] nvarchar(100),
 	IsDeleted bit
 );
+
+select * from Professors;
+select * from [Objects];
 
 create table Groups(
 	Id uniqueidentifier PRIMARY KEY,
@@ -77,6 +80,7 @@ insert into [Objects](Id,[Name],[Year],IsDeleted) values ('3f2d9995-a636-43e6-a6
 create table Schedules(
 	Id uniqueidentifier PRIMARY KEY,
 	[Group] nvarchar(100),
+	[Year] int,
 	[Object] nvarchar(100),
 	[Professor] nvarchar(100),
 	[Day] int,
@@ -85,7 +89,12 @@ create table Schedules(
 	IsDeleted bit
 );
 
+insert into Schedules(Id,[Group],[Year],[Object],[Professor],[Day],[StartTime],[EndTime],IsDeleted) values
+('706dd455-5b5e-4317-bb18-313223bdc8c6','B1',0,'Data Structures','Gatu Cristian',1,8,10,0);
+insert into Schedules(Id,[Group],[Year],[Object],[Professor],[Day],[StartTime],[EndTime],IsDeleted) values
+('acfc99c8-a163-4740-9715-07e7533aa4a5','B2',0,'Data Structures','Gatu Cristian',0,8,10,0);
 drop table Schedules;
+
 create table Subscriptions(
 	Id uniqueidentifier PRIMARY KEY,
 	[User] uniqueidentifier,
@@ -96,7 +105,9 @@ create table Subscriptions(
 create table Anouncements(
 	Id uniqueidentifier PRIMARY KEY,
 	[Professor] nvarchar(100),
-	[Anouncement] nvarchar(400),
+	[AnouncementText] nvarchar(400),
 	[CreationDate] datetime, 
 	IsDeleted bit
 );
+
+drop table Anouncements;

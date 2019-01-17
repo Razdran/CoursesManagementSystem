@@ -58,10 +58,10 @@ namespace CourseLab.Web.Controllers
                 return RedirectToAction(nameof(ProfileController.ProfessorProfile), "Profile");
             }
         }
-
         public IActionResult Logout()
         {
-            HttpContext.Session.Clear();
+            HttpContext.Session.Remove("Id");
+           
             return RedirectToAction(nameof(LoginController.Index), "Login");
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

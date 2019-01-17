@@ -9,6 +9,6 @@ namespace Function.Services.Services.Schedule
     {
         ScheduleDto GetById(Guid id);
         List<ScheduleDto> GetByGroupAndYear(string group, int year);
-
+        List<ScheduleDto> GetByProfessor(string professor);
     }
 }
