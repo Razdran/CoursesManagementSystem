@@ -40,6 +40,27 @@ namespace CourseLab.Services.Services.Professor
             return professorDtoList;
         }
 
+        public List<string> GetAllFullName()
+        {
+           var list = professorRepository.GetAll();
+            if (list == null)
+                return null;
+            var namelist = new List<string>();
+            foreach(var item in list)
+            {
+                namelist.Add(item.FirstName + " " + item.LastName);
+            }
+            return namelist;
+        }
+
+        public ProfessorDto GetByFullName(string fullname)
+        {
+            var list = fullname.Split(' ');
+            var prof = professorRepository.Query(x => x.FirstName == list[0] && x.LastName == list[1]).SingleOrDefault();
+            var dto = (ProfessorDto)new ProfessorDto().InjectFrom(prof);
+            return dto;
+        }
+
         public ProfessorDto GetById(Guid id)
         {
             var user = professorRepository.GetById(id);

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Function.Services.Services.Subscription
 {
-    interface ISubscriptionService
+    public interface ISubscriptionService
     {
         SubscriptionDto GetById(Guid id);
         List<SubscriptionDto> GetSubscriptionsByUser(Guid id);

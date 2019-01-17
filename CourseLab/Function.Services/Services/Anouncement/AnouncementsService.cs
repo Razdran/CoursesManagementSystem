@@ -24,6 +24,18 @@ namespace Function.Services.Services.Anouncement
             unitOfWork.Commit();
         }
 
+        public List<AnouncementDto> GetAnouncementsByFullName(string prof)
+        {
+            var list = anouncementRepository.Query(x => x.Professor == prof && x.IsDeleted == false).ToList();
+            var dtolist = new List<AnouncementDto>();
+            foreach(var item in list)
+            {
+                var ann = (AnouncementDto)new AnouncementDto().InjectFrom(item);
+                dtolist.Add(ann);
+            }
+            return dtolist;
+        }
+
         public List<AnouncementDto> GetAnouncementsByProfessors(List<string> profsnames)
         {
             var list = new List<AnouncementDto>();

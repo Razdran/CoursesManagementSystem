@@ -1,0 +1,43 @@
+﻿@model List<CourseLab.Web.Models.AnouncementModel>
+
+@{
+    ViewData["Title"] = "StudentAnouncement";
+    Layout = "~/Views/Shared/_LayoutStuds.cshtml";
+}
+
+<h2>Anouncements</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+               
+                <th>
+                    @Html.DisplayNameFor(model => Model[0].Professor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model[0].AnouncementText)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => Model[0].CreationDate)
+                </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Professor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnouncementText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>

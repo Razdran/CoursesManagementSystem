@@ -27,7 +27,10 @@ namespace Function.Services.Services.Subscription
         public void DeleteSubscription(SubscriptionDto subscription)
         {
             subscription.IsDeleted = true;
-            subRepository.Update((Data.Entities.Subscription)new Data.Entities.Subscription().InjectFrom(subscription));
+            var sub = subRepository.GetById(subscription.Id);
+            sub.IsDeleted = true;
+            
+            subRepository.Update(sub);
             unitOfWork.Commit();
         }
 

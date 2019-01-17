@@ -1,16 +1,15 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Function.Data.Entities
+namespace CourseLab.Web.Models
 {
-    public class Anouncement
+    public class AnouncementModel
     {
         public Guid Id { get; set; }
         public string Professor { get; set; }
         public string AnouncementText { get; set; }
         public DateTime CreationDate { get; set; }
-        public bool IsDeleted { get; set; }
     }
 }

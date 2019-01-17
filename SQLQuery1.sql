@@ -34,6 +34,8 @@ create table Professors(
 select * from Professors;
 select * from [Objects];
 
+select * from students;
+select * from groups;
 create table Groups(
 	Id uniqueidentifier PRIMARY KEY,
 	[Name] nvarchar(30),
@@ -88,11 +90,13 @@ create table Schedules(
 	[EndTime] int,
 	IsDeleted bit
 );
-
+drop table Schedules;
 insert into Schedules(Id,[Group],[Year],[Object],[Professor],[Day],[StartTime],[EndTime],IsDeleted) values
 ('706dd455-5b5e-4317-bb18-313223bdc8c6','B1',0,'Data Structures','Gatu Cristian',1,8,10,0);
 insert into Schedules(Id,[Group],[Year],[Object],[Professor],[Day],[StartTime],[EndTime],IsDeleted) values
 ('acfc99c8-a163-4740-9715-07e7533aa4a5','B2',0,'Data Structures','Gatu Cristian',0,8,10,0);
+insert into Schedules(Id,[Group],[Year],[Object],[Professor],[Day],[StartTime],[EndTime],IsDeleted) values
+('a3574afc-e85f-41f6-857d-405f7c93b0fb','B1',0,'Logics for Computer Science','Stefan Ciobaca',0,8,10,0);
 drop table Schedules;
 
 create table Subscriptions(

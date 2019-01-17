@@ -5,11 +5,9 @@
     Layout = "~/Views/Shared/_LayoutStuds.cshtml";
 }
 
-<h2>StudentSchedule</h2>
+<h2>Your Schedule</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -30,7 +28,7 @@
                     @Html.DisplayNameFor(model => Model[0].EndTime)
                 </th>
                 
-            <th></th>
+           
         </tr>
     </thead>
     <tbody>
@@ -53,11 +51,7 @@
                 @Html.DisplayFor(modelItem => item.EndTime)
             </td>
             
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+            
         </tr>
 }
     </tbody>

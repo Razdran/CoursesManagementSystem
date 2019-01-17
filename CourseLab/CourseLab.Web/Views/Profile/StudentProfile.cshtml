@@ -1,4 +1,4 @@
-﻿@model CourseLab.Web.Models.StudentRegisterModel
+﻿@model CourseLab.Web.Models.ProfileModel
 
 @{
     ViewData["Title"] = "StudentProfile";
@@ -12,37 +12,66 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => Model.Profile.FirstName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => Model.Profile.FirstName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayNameFor(model => Model.Profile.LastName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.LastName)
+            @Html.DisplayFor(model => Model.Profile.LastName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Group)
+            @Html.DisplayNameFor(model => Model.Profile.Group)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Group)
+            @Html.DisplayFor(model => Model.Profile.Group)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Year)
+            @Html.DisplayNameFor(model => Model.Profile.Year)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Year)
+            @Html.DisplayFor(model => Model.Profile.Year)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(model => Model.Profile.Email)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Email)
+            @Html.DisplayFor(model => Model.Profile.Email)
         </dd>
     </dl>
 </div>
+<p>
+    <a asp-action="Create" asp-controller="Profile">Create New Subscription</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => Model.Subscriptions[0].Professor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Subscriptions)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Professor)
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 <div>
     <a asp-controller="Login" asp-action="Logout">Logout</a>
 </div>
