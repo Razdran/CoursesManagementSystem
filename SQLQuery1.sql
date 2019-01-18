@@ -97,6 +97,13 @@ insert into Schedules(Id,[Group],[Year],[Object],[Professor],[Day],[StartTime],[
 ('acfc99c8-a163-4740-9715-07e7533aa4a5','B2',0,'Data Structures','Gatu Cristian',0,8,10,0);
 insert into Schedules(Id,[Group],[Year],[Object],[Professor],[Day],[StartTime],[EndTime],IsDeleted) values
 ('a3574afc-e85f-41f6-857d-405f7c93b0fb','B1',0,'Logics for Computer Science','Stefan Ciobaca',0,8,10,0);
+insert into Schedules(Id,[Group],[Year],[Object],[Professor],[Day],[StartTime],[EndTime],IsDeleted) values
+('9a776e65-ac0f-44fb-9002-3f5c72fb3daf','B3',0,'Logics for Computer Science','Stefan Ciobaca',2,10,12,0);
+insert into Schedules(Id,[Group],[Year],[Object],[Professor],[Day],[StartTime],[EndTime],IsDeleted) values
+('bcefeb97-f00a-493a-bab6-16228a242b88','B1',0,'Algebraic Foundations of Computer Science','Laurentiu Tiplea',0,10,12,0);
+insert into Schedules(Id,[Group],[Year],[Object],[Professor],[Day],[StartTime],[EndTime],IsDeleted) values
+('d37f7968-fcd1-40cd-8608-de88bfc42a73','B2',0,'Algebraic Foundations of Computer Science','Laurentiu Tiplea',3,12,14,0);
+
 drop table Schedules;
 
 create table Subscriptions(
